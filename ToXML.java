@@ -24,11 +24,10 @@ public class ToXML {
 	private Document doc = null;
 	
 	public ToXML(ResultSet result) throws Exception {
-		convertXML(result);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void convertXML(ResultSet rs) throws Exception{
+	public StringWriter convertXML(ResultSet rs) throws Exception{
 		this.docFactory =  DocumentBuilderFactory.newInstance();
 		try {
 			this.docBuilder = docFactory.newDocumentBuilder();
@@ -65,8 +64,13 @@ public class ToXML {
 	    StreamResult sr = new StreamResult(sw);
 	    transformer.transform(domSource, sr);
 
-	    System.out.println(sw.toString());
+	    return sw;
 	    
+	}
+	
+	public String XML_to_String(ResultSet rs) throws Exception{
+		StringWriter sw = this.convertXML(rs);
+		return sw.toString();
 	}
 
 }
