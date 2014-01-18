@@ -1,0 +1,8 @@
+Java Class for modify a ResultSet response of a MYSQL Server.
+
+## How To Use ##
+
+1 - Import class in your project
+2 - Import class in the source you want to use
+3 - Instance a new object of your class 
+4 - Pass to that object a resultset of a mysql instance.
